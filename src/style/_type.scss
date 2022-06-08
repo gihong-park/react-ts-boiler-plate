@@ -1,0 +1,48 @@
+@import "~rfs/scss";
+$typo-weights: (
+  "h1": 700,
+  "h2": 700,
+  "h3": 700,
+  "h4": 700,
+  "h5": 100,
+  "b1": 500,
+  "b2": 500,
+  "b3": 400,
+  "b4": 400,
+  "label": 700,
+);
+$typo-sizes: (
+  "h1": 56px,
+  "h2": 48px,
+  "h3": 40px,
+  "h4": 36px,
+  "h5": 32px,
+  "b1": 24px,
+  "b2": 20px,
+  "b3": 16px,
+  "b4": 14px,
+  "label": 14px,
+);
+$typo-line-heights: (
+  "h1": 83px,
+  "h2": 71px,
+  "h3": 59px,
+  "h4": 54px,
+  "h5": 47px,
+  "b1": 36px,
+  "b2": 30px,
+  "b3": 26px,
+  "b4": 22px,
+  "label": 22px,
+);
+
+$font-families: (
+  "SpoqaHanSansNeo": "Spoqa Han Sans Neo",
+  "Roboto": "Roboto",
+);
+
+@mixin typo($type: "label", $font-family: "Roboto") {
+  @include font-size(map-get($map: $typo-sizes, $key: $type));
+  line-height: map-get($map: $typo-line-heights, $key: $type);
+  color: $color-on-background;
+}
