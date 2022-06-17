@@ -1,3 +1,4 @@
+@import "./variables";
 /**
  * themify - Change color of a css property based on the currently active theme
  *
@@ -12,5 +13,23 @@
     .theme-#{$theme-name} & {
       #{$key}: map-get(map-get($themes, $theme-name), $color);
     }
+  }
+}
+
+@mixin mobile {
+  @media(min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
   }
 }
