@@ -1,0 +1,20 @@
+{
+  "default function component": {
+    "scope": "typescript,javascript,javascriptreact,typescriptreact",
+		"prefix": "dfc",
+		"body": [
+			"import React from \"react\";",
+			"import cb from \"classnames/bind\";",
+			"import styles from \"./${1:fileName}.module.scss\";",
+			"",
+			"const cn = cb.bind(styles)",
+			"",
+			"const  ${2:componentName}: React.FC = () => {",
+			"  return <div>$3</div>",
+			"}",
+			"",
+			"export default ${2:componentName};"
+		],
+		"description": "default function component"
+	}
+}
